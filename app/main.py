@@ -19,6 +19,8 @@ def main():
                 print("echo is a shell builtin")
             elif type_cmd.startswith("exit"):
                 print("exit is a shell builtin")
+            elif type_cmd.startswith("type"):
+                print("type is a shell builtin")
             else:
                 print(f"type {type_cmd}: not found")
             continue
