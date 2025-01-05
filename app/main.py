@@ -22,7 +22,7 @@ def main():
             elif type_cmd.startswith("type"):
                 print("type is a shell builtin")
             else:
-                print(f"type {type_cmd}: not found")
+                print(f"{type_cmd}: not found")
             continue
         elif command.startswith("echo"):
             echo_parts = command.split()
