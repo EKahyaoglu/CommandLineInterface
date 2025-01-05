@@ -1,9 +1,8 @@
 import sys
 
 
-def main():
-    # Uncomment this block to pass the first stage
-    # sys.stdout.write("$ ")
+def main():   
+    sys.stdout.write("$ ")
 
     # Wait for user input
     input()
@@ -11,3 +10,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
