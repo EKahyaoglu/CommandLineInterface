@@ -5,7 +5,7 @@ import sys, os
 
 def main():   
     # ----- VALID COMMANDS -----
-    valid_commands = ["echo", "exit 0", "type"]
+    valid_commands = ["echo", "exit 0", "exit", "type"]
     
     # ----- GETTING USER INPUT -----
     while True:
