@@ -26,7 +26,7 @@ def handle_type(command):
     else:
         executable_path = find_executable(type_cmd)
         if executable_path:
-            print(f"{type_cmd} is {executable_path}")
+            print(f"{type_cmd} is {os.path.basename(executable_path)}")
         else:
             print(f"{type_cmd}: not found")
 
