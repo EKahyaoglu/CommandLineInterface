@@ -56,10 +56,10 @@ def run_command(command):
             res = subprocess.run(
                 [executable_path] + args, check=True, capture_output=True, text=True
             )
-            
+
             # Print the arguments as expected
-            print(f"Program was passed {len(command_parts)} args (including program name).")
             print(f"Arg #0 (program name): {os.path.basename(executable_path)}")
+            print(f"Program was passed {len(command_parts)} args (including program name).")
             for i, arg in enumerate(args):
                 print(f"Arg #{i+1}: {arg}")
 
