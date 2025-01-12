@@ -61,7 +61,7 @@ def run_command(command):
             )
 
             # Print the arguments as expected
-            print(f"Program was passed {len(command_parts)} args (including program name).")
+            #print(f"Program was passed {len(command_parts)} args (including program name).")
             print(f"Arg #0 (program name): {program_name}")
             for i, arg in enumerate(args):
                 print(f"Arg #{i+1}: {arg}")
