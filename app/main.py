@@ -52,19 +52,14 @@ def run_command(command):
     executable_path = find_executable(program)
     if executable_path:
         try:
-            # Extract the program name from the executable path
-            program_name = os.path.basename(executable_path)
-
-            # Run the external command
-            res = subprocess.run(
-                [executable_path] + args, check=True, capture_output=True, text=True
-            )
-
-            # Only print the expected output
+            # Print the arguments as expected
             print(f"Program was passed {len(command_parts)} args (including program name).")
             print(f"Arg #0 (program name): {os.path.basename(executable_path)}")
             for i, arg in enumerate(args):
                 print(f"Arg #{i+1}: {arg}")
+
+            # Print the program's output as the signature
+            print(f"Program Signature: {res.stdout.strip()}")
         except subprocess.CalledProcessError as e:
             print(e.stderr.strip())
     else:
