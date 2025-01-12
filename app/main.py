@@ -58,14 +58,9 @@ def run_command(command):
             )
 
             # Print the arguments as expected
-            print(f"Program was passed {len(command_parts)} args (including program name).")
-            print(f"Arg #0 (program name): {os.path.basename(executable_path)}")
-            for i, arg in enumerate(args):
-                print(f"Arg #{i+1}: {arg}")
-
-            # Print the program's output as the signature
-            print(f"Program Signature: {res.stdout.strip()}")
-            print(f"Program Errors: {res.stderr.strip()}")
+            print(res.stdout.strip())
+            if res.stderr.strip():
+                print(res.stderr.strip())
         except subprocess.CalledProcessError as e:
             print(e.stderr.strip())
     else:
