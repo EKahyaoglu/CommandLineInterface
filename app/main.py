@@ -52,6 +52,11 @@ def run_command(command):
     executable_path = find_executable(program)
     if executable_path:
         try:
+            # Run the command and capture its output
+            res = subprocess.run(
+                [executable_path] + args, check=True, capture_output=True, text=True
+            )
+            
             # Print the arguments as expected
             print(f"Program was passed {len(command_parts)} args (including program name).")
             print(f"Arg #0 (program name): {os.path.basename(executable_path)}")
