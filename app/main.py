@@ -65,6 +65,7 @@ def run_command(command):
             print(f"Arg #0 (program name): {program_name}")
             for i, arg in enumerate(args):
                 print(f"Arg #{i+1}: {arg}")
+            print(res.stdout.strip())
 
             # Print the program's output (if any)
             print(f"Program Signature: {res.stdout.strip()}")
@@ -72,6 +73,7 @@ def run_command(command):
             print(e.stderr.strip())
     else:
         print(f"{command}: command not found")
+
 
 # ----- GET USER INPUT & EXECUTE COMMANDS -----
 def main():
