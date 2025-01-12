@@ -1,5 +1,4 @@
 # POSIX Compliant Shell / Command Line Interface Program
-
 import sys, os, subprocess
 
 
@@ -76,14 +75,19 @@ def main():
         # Wait for user input
         command = input().strip()
 
-        if is_builtin(command.split()[0]):
+        if not command:
+            continue
+
+        command_name = command.split()[0] if command.split() else ""
+
+        if is_builtin(command_name):
             if command.startswith("type"):
                 handle_type(command)
             elif command.startswith("echo"):
                 handle_echo(command)
             elif command.startswith("pwd"):
                 handle_pwd(command)
-            elif command == "exit 0" or command == "exit":
+            elif command == "exit" or command == "exit 0":
                 break
         else:
             run_command(command)
