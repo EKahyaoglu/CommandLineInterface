@@ -15,11 +15,6 @@ def find_executable(command):
             return potential_path
     return None
 
-def get_program_name(executable_path):
-    if executable_path:
-        return os.path.basename(executable_path)
-    return None
-
 # ----- COMMAND DIRECTORY -----
 # "type" Command
 def handle_type(command):
@@ -29,7 +24,7 @@ def handle_type(command):
     else:
         executable_path = find_executable(type_cmd)
         if executable_path:
-            print(f"{type_cmd} is {os.path.basename(executable_path)}")
+            print(f"{type_cmd} is {os.path.basename(sys.argv[0])}")
         else:
             print(f"{type_cmd}: not found")
 
