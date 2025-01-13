@@ -15,6 +15,10 @@ def find_executable(command):
             return potential_path
     return None
 
+def get_program_name(executable_path):
+    if executable_path:
+        return os.path.basename(executable_path)
+    return None
 
 # ----- COMMAND DIRECTORY -----
 # "type" Command
