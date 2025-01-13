@@ -47,7 +47,7 @@ def run_command(command):
     program = command_parts[0]
     args = command_parts[1:]
 
-    executable_path = find_executable(program)
+    executable_path = os.basename(find_executable(program))
     if executable_path:
         try:
             # Run the command and capture its output
